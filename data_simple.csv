@@ -1,0 +1,122 @@
+"region","operation_type","investigation_priority","timely_initiation_of_investigation","total_investigations"
+"1-Lubbock","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",106
+"1-Lubbock","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",5
+"1-Lubbock","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",497
+"1-Lubbock","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",11
+"1-Lubbock","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",2
+"1-Lubbock","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",312
+"1-Lubbock","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",27
+"1-Lubbock","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",4
+"1-Lubbock","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",442
+"10-El Paso","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",47
+"10-El Paso","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",1
+"10-El Paso","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",192
+"10-El Paso","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",6
+"10-El Paso","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",1
+"10-El Paso","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",42
+"10-El Paso","Illegal Operation","Priority 1 - 24 Hours","Yes (Timely)",1
+"10-El Paso","Residential Treatment Center","Priority 1 - 24 Hours","No (Not Timely)",2
+"10-El Paso","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",2
+"10-El Paso","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",1
+"10-El Paso","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",15
+"11-Edinburg","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",3
+"11-Edinburg","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",147
+"11-Edinburg","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",4
+"11-Edinburg","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",994
+"11-Edinburg","General Residential Operation","Priority 1 - 24 Hours","No (Not Timely)",1
+"11-Edinburg","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",23
+"11-Edinburg","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",1
+"11-Edinburg","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",489
+"11-Edinburg","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",1
+"11-Edinburg","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",42
+"2-Abilene","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",1
+"2-Abilene","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",54
+"2-Abilene","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",4
+"2-Abilene","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",391
+"2-Abilene","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",9
+"2-Abilene","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",124
+"2-Abilene","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",1
+"2-Abilene","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",1
+"3-Arlington","AH","Priority 2 - 72 Hours","Yes (Timely)",1
+"3-Arlington","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",9
+"3-Arlington","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",457
+"3-Arlington","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",54
+"3-Arlington","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",2543
+"3-Arlington","Exemption Request","Priority 1 - 24 Hours","Yes (Timely)",1
+"3-Arlington","Exemption Request","Priority 2 - 72 Hours","Yes (Timely)",1
+"3-Arlington","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",35
+"3-Arlington","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",3
+"3-Arlington","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",366
+"3-Arlington","Illegal Operation","Priority 1 - 24 Hours","Yes (Timely)",1
+"3-Arlington","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",3
+"3-Arlington","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",36
+"3-Arlington","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",5
+"3-Arlington","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",399
+"4-Tyler","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",1
+"4-Tyler","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",96
+"4-Tyler","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",3
+"4-Tyler","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",359
+"4-Tyler","General Residential Operation","Priority 1 - 24 Hours","No (Not Timely)",2
+"4-Tyler","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",14
+"4-Tyler","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",1
+"4-Tyler","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",207
+"4-Tyler","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",1
+"4-Tyler","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",14
+"4-Tyler","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",4
+"4-Tyler","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",204
+"5-Beaumont","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",1
+"5-Beaumont","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",42
+"5-Beaumont","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",5
+"5-Beaumont","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",237
+"5-Beaumont","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",7
+"5-Beaumont","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",2
+"5-Beaumont","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",132
+"5-Beaumont","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",2
+"5-Beaumont","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",2
+"5-Beaumont","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",39
+"6-Houston","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",5
+"6-Houston","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",303
+"6-Houston","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",30
+"6-Houston","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",1988
+"6-Houston","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",67
+"6-Houston","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",14
+"6-Houston","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",946
+"6-Houston","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",1
+"6-Houston","Independent Foster Family/Group Home","Priority 2 - 72 Hours","Yes (Timely)",3
+"6-Houston","Residential Treatment Center","Priority 1 - 24 Hours","No (Not Timely)",3
+"6-Houston","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",177
+"6-Houston","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",52
+"6-Houston","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",2716
+"7-Austin","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",2
+"7-Austin","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",195
+"7-Austin","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",11
+"7-Austin","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",978
+"7-Austin","General Residential Operation","Priority 1 - 24 Hours","No (Not Timely)",1
+"7-Austin","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",34
+"7-Austin","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",9
+"7-Austin","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",483
+"7-Austin","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",1
+"7-Austin","Residential Treatment Center","Priority 1 - 24 Hours","No (Not Timely)",5
+"7-Austin","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",66
+"7-Austin","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",16
+"7-Austin","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",1070
+"8-San Antonio","Child Placing Agency/Branches","Priority 1 - 24 Hours","No (Not Timely)",11
+"8-San Antonio","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",315
+"8-San Antonio","Child Placing Agency/Branches","Priority 2 - 72 Hours","No (Not Timely)",18
+"8-San Antonio","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",1292
+"8-San Antonio","General Residential Operation","Priority 1 - 24 Hours","No (Not Timely)",1
+"8-San Antonio","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",70
+"8-San Antonio","General Residential Operation","Priority 2 - 72 Hours","No (Not Timely)",12
+"8-San Antonio","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",826
+"8-San Antonio","Illegal Operation","Priority 1 - 24 Hours","Yes (Timely)",1
+"8-San Antonio","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",5
+"8-San Antonio","Residential Treatment Center","Priority 1 - 24 Hours","No (Not Timely)",2
+"8-San Antonio","Residential Treatment Center","Priority 1 - 24 Hours","Yes (Timely)",135
+"8-San Antonio","Residential Treatment Center","Priority 2 - 72 Hours","No (Not Timely)",10
+"8-San Antonio","Residential Treatment Center","Priority 2 - 72 Hours","Yes (Timely)",1187
+"9-Midland","Child Placing Agency/Branches","Priority 1 - 24 Hours","Yes (Timely)",15
+"9-Midland","Child Placing Agency/Branches","Priority 2 - 72 Hours","Yes (Timely)",95
+"9-Midland","General Residential Operation","Priority 1 - 24 Hours","No (Not Timely)",1
+"9-Midland","General Residential Operation","Priority 1 - 24 Hours","Yes (Timely)",3
+"9-Midland","General Residential Operation","Priority 2 - 72 Hours","Yes (Timely)",31
+"9-Midland","Illegal Operation","Priority 2 - 72 Hours","Yes (Timely)",1
