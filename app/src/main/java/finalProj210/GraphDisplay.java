@@ -174,8 +174,8 @@ public class GraphDisplay extends JComponent implements ActionListener {
     this.addMouseMotionListener(dl);
 
     // Begin animation callback events
-    timer = new Timer(25, this);
-    timer.setInitialDelay(500);
+    timer = new Timer(50, this);
+    timer.setInitialDelay(10000);
     timer.start(); 
   }
 
