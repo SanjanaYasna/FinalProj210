@@ -174,8 +174,8 @@ public class GraphDisplay extends JComponent implements ActionListener {
     this.addMouseMotionListener(dl);
 
     // Begin animation callback events
-    timer = new Timer(50, this);
-    timer.setInitialDelay(10000);
+    timer = new Timer(25, this);
+    timer.setInitialDelay(500);
     timer.start(); 
   }
 
@@ -409,10 +409,32 @@ public class GraphDisplay extends JComponent implements ActionListener {
     return edges;
   }
 
+  /** simple three-line arrow */
+  private void drawArrow(Point p1, Point p2, Graphics g) {
+    double d = p1.distance(p2);
+    double dx = (p2.x-p1.x)/d;
+    double dy = (p2.y-p1.y)/d;
+    double dxrot = -dy;
+    double dyrot = dx;
+    int a0x = (int)(p2.x-(NODE_RADIUS+2)*dx);
+    int a0y = (int)(p2.y-(NODE_RADIUS+2)*dy);
+    int a1x = (int)(a0x-5*dx+2.5*dxrot);
+    int a1y = (int)(a0y-5*dy+2.5*dyrot);
+    int a2x = (int)(a0x-5*dx-2.5*dxrot);
+    int a2y = (int)(a0y-5*dy-2.5*dyrot);
+    Graphics2D g2 = (Graphics2D) g.create();
+    g2.setStroke(new BasicStroke(2));
+    g2.drawLine(p1.x,p1.y,p2.x,p2.y);
+    g2.drawLine(a0x,a0y,a1x,a1y);
+    g2.drawLine(a0x,a0y,a2x,a2y);
+    g2.drawLine(a1x,a1y,a2x,a2y);
+g2.dispose();
+  }
+  
   /** for drawing arrows
   * see https://stackoverflow.com/questions/2027613/how-to-draw-a-directed-arrow-line-in-java
   */
-  private void drawArrow(Point p1, Point p2, Graphics g) {
+  private void oldDrawArrow(Point p1, Point p2, Graphics g) {
     Graphics2D g2 = (Graphics2D) g.create();
     g2.setStroke(new BasicStroke(2));
     g2.drawLine(p1.x,p1.y,p2.x,p2.y);
@@ -475,7 +497,8 @@ public class GraphDisplay extends JComponent implements ActionListener {
         g2.setColor(getColor(edge));
         //System.out.println(getColor(edge)+" "+edge);
         if (isDirected) {
-          drawArrow(loc,dloc,g);
+          drawArrow(loc,dloc,g2); // CHANGE, WAS JUST G PREVIOUSLY
+
         } else {
           //Graphics2D g2 = (Graphics2D) g.create();
           g2.setStroke(new BasicStroke(2));
@@ -492,11 +515,9 @@ public class GraphDisplay extends JComponent implements ActionListener {
     for (Object n : nodes) {
       Point pos = getLoc(n);
       g.setColor(getColor(n));
-      g.fillOval(pos.x - NODE_RADIUS, pos.y - NODE_RADIUS,
-              2 * NODE_RADIUS, 2 * NODE_RADIUS);
+      g.fillOval(pos.x - NODE_RADIUS, pos.y - NODE_RADIUS, 2 * NODE_RADIUS, 2 * NODE_RADIUS);
       g.setColor(Color.black);
-      g.drawOval(pos.x - NODE_RADIUS, pos.y - NODE_RADIUS,
-              2 * NODE_RADIUS, 2 * NODE_RADIUS);
+      g.drawOval(pos.x - NODE_RADIUS, pos.y - NODE_RADIUS, 2 * NODE_RADIUS, 2 * NODE_RADIUS);
       String label = getLabel(n);
       Rectangle2D sbound = g.getFontMetrics().getStringBounds(label, g);
       int descent = g.getFontMetrics().getDescent();

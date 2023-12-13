@@ -8,7 +8,7 @@ import java.util.Optional;
 
 class Main {
   public static void main(String[] args) throws Exception{
-    MutableValueGraph<String,Integer> graph =
+   MutableValueGraph<String,Integer> graph =
     ValueGraphBuilder.directed().build();
     Scanner file = ReadFile.read("/Users/sanjanayasna/Desktop/Data_Structs_Practice/FinalProj210/data_simple.csv");
     Integer lineCount = 0;
@@ -32,13 +32,21 @@ class Main {
     //Idea #1: do weights by percentage, subtract htem from 1, and maybe find say the most common reason for, say, an untimely intervention 
     //(the most commonvalues would have the smallest decimal, since you subtract htem from 1)
     file.close();
-   /*  GraphDisplay customize = new GraphDisplay(graph);
-    System.out.println(graph.successors( " No (Not Timely) "));
-    arrange(customize);
-    Shortest.grossPath(graph, " No (Not Timely) "); */
-    GraphDisplay customize = new GraphDisplay(invertedWeightAsPercentage(graph));
-    arrange(customize);
-   //System.out.println(graph.nodes().toString());
+    //Shortest.grossPath(graph, " Yes (Timely) ");
+    MutableValueGraph<String,Double> percentageGraph = invertedLinksDouble(weightAsPercentage(graph));
+    GraphDisplay animation = new GraphDisplay(percentageGraph);
+    arrange(animation);
+    ShortestbyPercent.grossPath(percentageGraph, " 6-Houston " );
+    
+
+    //ShortestbyPercent.grossPath(weightAsPercentage(graph), " Yes (Timely) ");
+  /* GraphDisplay animation = new GraphDisplay(graph);
+   Main.arrange(animation);
+   Shortest.grossPath(graph, " Yes (Timely) ");
+   animation.setColor(" Priority 2 - 72 Hours ", Color.YELLOW);
+   Object edge = animation.getEdgeBetween(" Yes (Timely) ", " Priority 2 - 72 Hours ");
+   animation.setColor(edge, Color.MAGENTA);
+   animationAttempt.colorizeShit(animation);*/
   }
 
   public static void arrange(GraphDisplay customize){
@@ -93,10 +101,35 @@ class Main {
     System.out.println(newGraph.edges());
     for (EndpointPair<String> link : newGraph.edges()){
       Double originalPercent = newGraph.edgeValueOrDefault(link.source(), link.target(),0.0);
+      //am actual pain
       Double newPercent = (double) Math.floor(1 * 100.00 -originalPercent * 100.00) / 100.00;
       newGraph.putEdgeValue(link.source(), link.target() ,newPercent);
     }
     System.out.println(newGraph.edges());
+    return newGraph;
+  }
+
+  /*Takes graph of edge value integer input, and outputs the links in an inverted fashion */
+  public static MutableValueGraph<String,Integer> invertedLinksInteger(MutableValueGraph<String,Integer> graph){
+    MutableValueGraph<String,Integer> newGraph=
+    ValueGraphBuilder.directed().build();;
+    for (EndpointPair<String> link : graph.edges()){
+      Integer edgeVal = graph.edgeValueOrDefault(link.source(), link.target(), 0);
+      //newGraph.removeEdge(link.source(), link.target());
+      newGraph.putEdgeValue(link.target(), link.source(), edgeVal);
+    }
+    return newGraph;
+  }
+
+  /*Takes graph of edge value double input, and outputs the links in an inverted fashion */
+  public static MutableValueGraph<String,Double> invertedLinksDouble(MutableValueGraph<String,Double> graph){
+    MutableValueGraph<String,Double> newGraph=
+    ValueGraphBuilder.directed().build();;
+    for (EndpointPair<String> link : graph.edges()){
+      Double edgeVal = graph.edgeValueOrDefault(link.source(), link.target(), 0.0);
+      //newGraph.removeEdge(link.source(), link.target());
+      newGraph.putEdgeValue(link.target(), link.source(), edgeVal);
+    }
     return newGraph;
   }
 }

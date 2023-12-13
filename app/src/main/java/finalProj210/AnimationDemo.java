@@ -20,6 +20,7 @@ public class AnimationDemo {
 
     GraphDisplay d = new GraphDisplay(graph);
     d.labelOffset = new Point(0,3);
+    
 
     String[] labels = {"C", "E", "F", "A", "D", "B"};
     while (true) {
@@ -30,7 +31,7 @@ public class AnimationDemo {
         }
         d.setColor(lbl,Color.BLUE);
       }
-      for (Object edge: d.getEdgeSet()) {
+      /*for (Object edge: d.getEdgeSet()) {
         try {
           Thread.sleep(500);
         } catch (Exception e) {
@@ -50,7 +51,10 @@ public class AnimationDemo {
         } catch (Exception e) {
         }
         d.setColor(edge,Color.MAGENTA);
-      }
+      }*/
+      Object edge = d.getEdgeBetween("A", "B");
+      System.out.println(d.getNode(1100, 50));
+      d.setColor(edge, Color.GREEN);
     }
   }
 }
