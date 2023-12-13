@@ -29,8 +29,6 @@ class Main {
       }
       lineCount += 1;
     }
-    //Idea #1: do weights by percentage, subtract htem from 1, and maybe find say the most common reason for, say, an untimely intervention 
-    //(the most commonvalues would have the smallest decimal, since you subtract htem from 1)
     file.close();
     //Shortest.grossPath(graph, " Yes (Timely) ");
     MutableValueGraph<String,Double> percentageGraph = invertedLinksDouble(weightAsPercentage(graph));

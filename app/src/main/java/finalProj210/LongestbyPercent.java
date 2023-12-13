@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import com.google.common.graph.*;
 
-public class ShortestbyPercent {
+public class LongestbyPercent {
     //keeps track of visited node
     public static HashSet<String> visited = new HashSet<String>();
     //keeps track of the node that was visited to get to certain node, for use in contruct path function
