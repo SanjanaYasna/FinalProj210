@@ -1,12 +1,10 @@
 package finalProj210;
 import com.google.common.graph.*;
-import java.awt.Color;
 import java.util.Scanner;
 import java.awt.Point;
-import java.util.Arrays;
-import java.util.Optional;
-
+/*Main class, displays initial graph display setup */
 class Main {
+  /*Main method, calls the other classes based upon user inputs of graph preferences and starting node */
   public static void main(String[] args) throws Exception{
    MutableValueGraph<String,Integer> graph =
     ValueGraphBuilder.directed().build();
@@ -30,23 +28,52 @@ class Main {
       lineCount += 1;
     }
     file.close();
-    //Shortest.grossPath(graph, " Yes (Timely) ");
-    MutableValueGraph<String,Double> percentageGraph = invertedLinksDouble(weightAsPercentage(graph));
-    GraphDisplay animation = new GraphDisplay(percentageGraph);
-    arrange(animation);
-    ShortestbyPercent.grossPath(percentageGraph, " 6-Houston " );
+    Scanner questions = new Scanner(System.in);
+    System.out.println("Enter a number, 1 or 2, based on preference");
+    System.out.println("Do you want the graph to have gross cases (1) or outcome decimal percentage edges (2) ?");
+    String ans1 = questions.nextLine();
+    System.out.println("Do you want the graph to have default link direction, from outcome down to location (1) or reverted link direction from location up to outcome (2)?");
+    String ans2 = questions.nextLine();
+    System.out.println("Longest (1) or shortest path (2) from given node?");
+    String ans3 = questions.nextLine();
+    System.out.println("Chose source node from set of nodes. Be mindful not to include leading/trailing spaces: " + graph.nodes());
+    String source = questions.nextLine();
+    source = " " + source + " ";
+     questions.close();
+    if (ans1.equals("1")){
+      MutableValueGraph<String, Integer> currGraph = graph;
+      if (ans2.equals("2")){
+        currGraph= invertedLinksInteger(currGraph);
+      }
+      GraphDisplay animation = new GraphDisplay(currGraph);
+      arrange(animation);
+      if (ans3.equals("1")){
+        Longest.grossPath(currGraph, source);
+      }
+      if (ans3.equals("2")){
+        Shortest.grossPath(currGraph, source);
+      }
+    }
+    if (ans1.equals("2")){
+      MutableValueGraph<String, Double> currGraph = weightAsPercentage(graph);
+      if (ans2.equals("2")){
+        currGraph= invertedLinksDouble(currGraph);
+      }
+      GraphDisplay animation = new GraphDisplay(currGraph);
+      arrange(animation);
+      if (ans3.equals("1")){
+        currGraph = invertedWeightAsPercentage(currGraph);
+        ShortestbyPercent.grossPath(currGraph, source);
+      }
+      if (ans3.equals("2")){
+        ShortestbyPercent.grossPath(currGraph, source);
+      }
+    }
     
-
-    //ShortestbyPercent.grossPath(weightAsPercentage(graph), " Yes (Timely) ");
-  /* GraphDisplay animation = new GraphDisplay(graph);
-   Main.arrange(animation);
-   Shortest.grossPath(graph, " Yes (Timely) ");
-   animation.setColor(" Priority 2 - 72 Hours ", Color.YELLOW);
-   Object edge = animation.getEdgeBetween(" Yes (Timely) ", " Priority 2 - 72 Hours ");
-   animation.setColor(edge, Color.MAGENTA);
-   animationAttempt.colorizeShit(animation);*/
+   
   }
 
+  /*Displays graph with nodes in nice positions */
   public static void arrange(GraphDisplay customize){
     customize.setLoc(" Yes (Timely) ", new Point(1100, 50));
     customize.setLoc(" No (Not Timely) ", new Point(600, 50));
@@ -72,6 +99,7 @@ class Main {
     customize.setLoc(" 9-Midland ", new Point(1700, 1000));
   }
 
+  /*takes graph and converts integer edges to percentage outcomes (each edge value / total sum of edges of all successors of a node) */
   public static MutableValueGraph<String,Double> weightAsPercentage(MutableValueGraph<String,Integer> graph){
     MutableValueGraph<String,Double> newGraph = ValueGraphBuilder.directed().build();
     for (String s: graph.nodes()){
@@ -94,11 +122,11 @@ class Main {
     return newGraph;
   }
 
-  public static MutableValueGraph<String, Double> invertedWeightAsPercentage(MutableValueGraph<String,Integer> graph){
-    MutableValueGraph<String,Double> newGraph = weightAsPercentage(graph);
-    System.out.println(newGraph.edges());
-    for (EndpointPair<String> link : newGraph.edges()){
-      Double originalPercent = newGraph.edgeValueOrDefault(link.source(), link.target(),0.0);
+  /*take double values of eges and subtracts the decimals from 1, to return graph with inverted edge values */
+  public static MutableValueGraph<String, Double> invertedWeightAsPercentage(MutableValueGraph<String,Double> graph){
+    MutableValueGraph<String,Double> newGraph=ValueGraphBuilder.directed().build();
+    for (EndpointPair<String> link : graph.edges()){
+      Double originalPercent = graph.edgeValueOrDefault(link.source(), link.target(),0.0);
       //am actual pain
       Double newPercent = (double) Math.floor(1 * 100.00 -originalPercent * 100.00) / 100.00;
       newGraph.putEdgeValue(link.source(), link.target() ,newPercent);

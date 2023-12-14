@@ -1,14 +1,14 @@
 package finalProj210;
 import java.util.*;
 import java.awt.Color;
-
 import com.google.common.graph.*;
 
+/*takes in value graph with double edge values, to use Dijakstra algorithm and output resulting path(s), and also animate*/
 public class ShortestbyPercent {
     //keeps track of visited node
     public static HashSet<String> visited = new HashSet<String>();
     //keeps track of the node that was visited to get to certain node, for use in contruct path function
-    public static HashMap<String, String> via = new HashMap<String, String>(); //path thing, not very necessary
+    public static HashMap<String, String> via = new HashMap<String, String>(); 
     /*updates shortet distance/path length to each node */
     public static HashMap<String, Double> distance = new HashMap<String, Double>();
     /*queue that keeps track of hte minimum computed total distance (multiple if they share a minimum value). That way, you have a destination
@@ -62,7 +62,7 @@ public class ShortestbyPercent {
             possibleMinimums.add(" 6-Houston ");
         }
        if (!graph.nodes().contains(startNode)){
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException("Selected node not found");
        }
        unvisited.add(startNode);
        for (String s : graph.nodes()){
@@ -98,7 +98,7 @@ public class ShortestbyPercent {
         System.out.println(lookupPath(graph, s, animation));
     }
     }
-    /*helper function for the major processing in the while loop in grossPath, checks successors, updates distances, etc */
+    /*helper function for the major processing in the while loop in grossPath(), checks successors, updates distances, etc */
     public static void propogate(MutableValueGraph<String,Double> graph, String node, GraphDisplay animation){
         Double currNodeWeight = distance.get(node);
         minDistance.remove();

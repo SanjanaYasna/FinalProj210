@@ -1,14 +1,15 @@
 package finalProj210;
 import java.util.*;
 import java.awt.Color;
-
 import com.google.common.graph.*;
 
+/*takes in value graph with integer edge values, to use Dijakstra algorithm and output resulting SHORTEST path(s), and also animate*/
 public class Shortest {
     //keeps track of visited node
     public static HashSet<String> visited = new HashSet<String>();
     //keeps track of the node that was visited to get to certain node, for use in contruct path function
-    public static HashMap<String, String> via = new HashMap<String, String>(); //path thing, not very necessary
+    public static HashMap<String, String> via = new HashMap<String, String>(); 
+    //keeps track of distances that beat records for shortest yet
     public static HashMap<String, Integer> distance = new HashMap<String, Integer>();
     //queue that keeps track of hte minimum computed total distance (multiple if they share a minimum value)
     public static Queue<String> minOverall = new LinkedList<String>();
@@ -21,7 +22,15 @@ public class Shortest {
         return firstVal.get(keyInA) - secVal.get(keyInB); 
        }
     );
+    //unvisited node hashset
     public static HashSet<String> unvisited = new HashSet<String>();
+    /*Function to calculate gross path from startNode to each of the other nodes of graph (lowest distance recorded in distance hashmap),
+     * and then print out hte output(s) for shortest path along with the colors. Contains animatations as well for djakstra in action and
+     * the final outputed path in green.
+     * A nood or edge is highlighted in yellow for a split second if it is currently being considered as a potential path to a node but it doesn't beat the record for
+     * the smallest distance to said node it is pointing to. It contains green if a new path was found that was more efficient.
+     * The resulting shortest path/paths are outputted in green, and their overall path and associated weights are printed in console
+     */
     public static void grossPath(MutableValueGraph<String,Integer> graph, String startNode) throws Exception{
         //Initialize set of possible minimums
         possibleMinimums.add(" 5-Beaumont ");
@@ -79,7 +88,9 @@ public class Shortest {
     for (String s: minOverall){
         System.out.println(lookupPath(graph, s, animation));
     }
-    }
+}
+
+    /*helper function for the major processing in the while loop in grossPath(), checks successors, updates distances, etc */
     public static void propogate(MutableValueGraph<String,Integer> graph, String node, GraphDisplay animation){
         int currNodeWeight = distance.get(node);
         minDistance.remove();
@@ -127,6 +138,8 @@ public class Shortest {
         animation.setColor(node, new Color(192, 192, 255)); 
     }
 
+    /*Outputs string of overall path to a destination (from what was computed as shortest path from via hashtable), 
+    and animates said path in green */
     public static String lookupPath(MutableValueGraph<String,Integer> graph,String destination, GraphDisplay animation){
         LinkedList<String> path = new LinkedList<String>();
         String currNode = destination;

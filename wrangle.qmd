@@ -1,0 +1,31 @@
+```{r}
+library(tidyverse)
+library(dplyr)
+library(janitor)
+```
+
+```{r}
+data <- read_csv("/Users/sanjanayasna/Documents/SDS_192/finalProj210/data.csv")
+data <- data %>% clean_names()
+```
+
+```{r}
+data_summary <- data |>
+  select(county, region, operation_type, investigation_priority, timely_initiation_of_investigation,
+         number_of_rcci_abuse_neglect_investigations_completed_in_fiscal_year) |>
+  group_by(county, region, operation_type, investigation_priority, timely_initiation_of_investigation) %>%
+  summarize(total_investigations = sum(number_of_rcci_abuse_neglect_investigations_completed_in_fiscal_year))
+```
+
+```{r}
+more_general_summary <- data |>
+  filter(region != "Unknown") |>
+  select(region, operation_type, investigation_priority, timely_initiation_of_investigation,
+         number_of_rcci_abuse_neglect_investigations_completed_in_fiscal_year) |>
+  group_by(region, operation_type, investigation_priority, timely_initiation_of_investigation) %>%
+  summarize(total_investigations = sum(number_of_rcci_abuse_neglect_investigations_completed_in_fiscal_year))
+```
+```
+```{r}
+write.csv(more_general_summary, "/Users/sanjanayasna/Documents/SDS_192/finalProj210/data_simple.csv", row.names=FALSE)
+```
